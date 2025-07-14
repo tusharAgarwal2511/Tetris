@@ -20,4 +20,5 @@ class Game{
     std::vector<Block> blocks;
     Block currBlock;
     Block nextBlock;
+    bool isBlockOutside();
 };
