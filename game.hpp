@@ -21,4 +21,5 @@ class Game{
     Block currBlock;
     Block nextBlock;
     bool isBlockOutside();
+    void rotateBlock();
 };

@@ -9,12 +9,13 @@
 class Block{
     
     public:
+    int id;
+    std::map<int, std::vector<Position>> cells;
     Block();
     void draw();
     void move(int rows, int cols);
-    int id;
-    std::map<int, std::vector<Position>> cells;
     std::vector<Position> getCellPositions();
+    void rotate();
 
     private : int cellSize;
     int rotationState;
