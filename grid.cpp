@@ -43,3 +43,8 @@ bool Grid::isCellOutside(int row, int col){
     if(row >= 0 && row < numRows && col >= 0 && col < numCols) return false;
     return true;
 }
+
+bool Grid::isCellEmpty(int row, int col){
+    if(grid[row][col] == 0) return true;
+    else return false;
+}

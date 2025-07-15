@@ -12,6 +12,7 @@ class Grid{
     void print();
     bool isCellOutside(int row, int col);
     void draw();
+    bool isCellEmpty(int row, int col);
 
 
     private:
