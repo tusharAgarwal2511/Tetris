@@ -85,4 +85,7 @@ bool Game::isBlockOutside(){
 
 void Game::rotateBlock(){
     currBlock.rotate();
+    if(isBlockOutside()){
+        currBlock.undoRotation();
+    }
 }
