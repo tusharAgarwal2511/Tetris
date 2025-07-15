@@ -26,15 +26,11 @@ int main() {
 
     while (WindowShouldClose() == false) {
 
-        // Handle inputs
         game.handleInput();
         if(eventTriggered(0.2)){
             game.moveBlockDown();
         }
 
-        // Update positions
-
-        // Draw objects
         BeginDrawing();
         ClearBackground(darkBlue);
         DrawTextEx(font, "SCORE", {365, 15}, 38, 2, WHITE);
