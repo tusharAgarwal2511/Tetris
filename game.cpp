@@ -45,7 +45,11 @@ void Game::handleInput(){
         case KEY_DOWN:
             moveBlockDown();
             break;
+
         case KEY_UP:
+            rotateBlock();
+            break;
+        case KEY_SPACE:
             rotateBlock();
             break;
         }
