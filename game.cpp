@@ -103,6 +103,7 @@ void Game::lockBlock(){
     }
     currBlock = nextBlock;
     nextBlock = getRandomBlock();
+    grid.clearFullRows();
 }
 
 

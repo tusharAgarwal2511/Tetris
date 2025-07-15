@@ -48,3 +48,39 @@ bool Grid::isCellEmpty(int row, int col){
     if(grid[row][col] == 0) return true;
     else return false;
 }
+
+bool Grid::isRowFull(int row){
+    for(int i = 0; i < numCols; i++){
+        if(grid[row][i] == 0){
+            return false;
+        }
+    }
+    return true;
+}
+
+void Grid::clearRow(int row){
+    for(int i = 0; i < numCols; i++){
+        grid[row][i] = 0;
+    }
+}
+
+void Grid::moveRowsDown(int row, int rows){
+    for(int i = 0; i < numCols; i++){
+        grid[row + rows][i] = grid[row][i];
+        grid[row][i] = 0;
+    }
+}
+
+int Grid::clearFullRows(){
+    int completed = 0;
+    for(int i = numRows - 1; i >= 0; i--){
+        if(isRowFull(i)){
+            clearRow(i);
+            completed++;
+        }
+        else if(completed > 0){
+            moveRowsDown(i, completed);
+        }
+    }
+    return completed;
+}
