@@ -16,6 +16,7 @@ class Game{
     void moveBlockRight();
     void moveBlockDown();
     bool gameOver;
+    int score;
 
     private:
     std::vector<Block> blocks;
@@ -26,4 +27,5 @@ class Game{
     void lockBlock();
     bool blockFits();
     void reset();
+    void updateScore(int linesCleared, int moveDownPoints);
 };

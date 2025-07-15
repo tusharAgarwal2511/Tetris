@@ -10,6 +10,7 @@ Game::Game(){
     currBlock = getRandomBlock();
     nextBlock = getRandomBlock();
     gameOver = false;
+    score = 0;
 }
 
 
@@ -49,11 +50,13 @@ void Game::handleInput(){
 
         case KEY_DOWN:
             moveBlockDown();
+            updateScore(0, 1);
             break;
 
         case KEY_UP:
             rotateBlock();
             break;
+
         case KEY_SPACE:
             rotateBlock();
             break;
@@ -119,7 +122,9 @@ void Game::lockBlock(){
         gameOver = true;
     }
     nextBlock = getRandomBlock();
-    grid.clearFullRows();
+    int rowsCleared = grid.clearFullRows();
+    updateScore(rowsCleared, 0);
+    
 }
 
 
@@ -138,4 +143,25 @@ void Game::reset(){
     blocks = getAllBlocks();
     currBlock = getRandomBlock();
     nextBlock = getRandomBlock();
+    score = 0;
+}
+
+void Game::updateScore(int linesCleared, int moveDownPoints){
+    switch(linesCleared){
+        case 1:
+            score += 10;
+            break;
+        case 2:
+            score += 40;
+            break;
+        case 3:
+            score += 60;
+            break;
+        case 4:
+            score += 100;
+            break;
+        default:
+            break;
+    }
+    score += moveDownPoints;
 }
