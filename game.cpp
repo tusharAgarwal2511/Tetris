@@ -54,14 +54,14 @@ void Game::handleInput(){
 
 void Game::moveBlockLeft(){
     currBlock.move(0, -1);
-    if(isBlockOutside()){
+    if (isBlockOutside() || blockFits() == false){
         currBlock.move(0, 1);
     }
 }
 
 void Game::moveBlockRight(){
     currBlock.move(0, 1);
-    if (isBlockOutside()){
+    if (isBlockOutside() || blockFits() == false){
         currBlock.move(0, -1);
     }
 }
@@ -86,7 +86,7 @@ bool Game::isBlockOutside(){
 
 void Game::rotateBlock(){
     currBlock.rotate();
-    if(isBlockOutside()){
+    if (isBlockOutside() || blockFits() == false){
         currBlock.undoRotation();
     }
 }
