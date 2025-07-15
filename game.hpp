@@ -15,6 +15,7 @@ class Game{
     void moveBlockLeft();
     void moveBlockRight();
     void moveBlockDown();
+    bool gameOver;
 
     private:
     std::vector<Block> blocks;
@@ -24,4 +25,5 @@ class Game{
     void rotateBlock();
     void lockBlock();
     bool blockFits();
+    void reset();
 };
