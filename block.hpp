@@ -12,7 +12,7 @@ class Block{
     int id;
     std::map<int, std::vector<Position>> cells;
     Block();
-    void draw();
+    void draw(int offSetX, int offSetY);
     void move(int rows, int cols);
     std::vector<Position> getCellPositions();
     void rotate();
